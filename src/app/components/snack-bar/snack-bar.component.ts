@@ -18,7 +18,15 @@ export class SnackBarComponent {
     @Inject(MAT_SNACK_BAR_DATA) public data: any,
     private _snackRef: MatSnackBarRef<SnackBarComponent>,
   ) {}
+  ngAfterViewInit() {
+    this.autoCloseSnackBar();
+  }
 
+  autoCloseSnackBar() {
+    setTimeout(() => {
+      this.closeSnackBar();
+    }, 3000); // Adjust the delay time (in milliseconds) as needed
+  }
   get icon() {
     switch (this.data.snackType) {
       default:

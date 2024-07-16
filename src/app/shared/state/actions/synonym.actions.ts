@@ -15,6 +15,10 @@ export class GetSynonyms_ACTION implements ActionParent {
     type = SynonymActionTypes.GET_SYNONYMS_FAILED;
     constructor(public payload: any) {}
   }
+  export class GetSynonymClear implements Action {
+    type = SynonymActionTypes.GET_SYNONYM_CLEAR;
+    constructor(public payload: any) {}
+  }
   export class PostSynonym_ACTION implements ActionParent {
     type = SynonymActionTypes.POST_SYNONYM_STARTED;
     constructor(public payload: any) {

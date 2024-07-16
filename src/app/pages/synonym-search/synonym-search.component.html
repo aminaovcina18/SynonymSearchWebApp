@@ -1,5 +1,6 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
-    <form [formGroup]="synonymSearchForm" class="form-container w-100 p-3" style="max-width: 500px;">
+<div class="d-flex justify-content-center align-items-center vh-100" style="overflow-x: hidden;">
+    <app-loading *ngIf="LOADING"></app-loading>
+    <form *ngIf="!LOADING" [formGroup]="synonymSearchForm" class="form-container w-100 p-3" style="max-width: 500px;">
         <div class="text-center mb-4">
             <h2>Find <strong>Synonym</strong></h2>
             <p>Search for synonyms now</p>

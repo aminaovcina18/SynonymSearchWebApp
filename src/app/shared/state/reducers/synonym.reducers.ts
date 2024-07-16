@@ -24,6 +24,9 @@ const INITIAL_STATE: SynonymStoreModel = {
         };
       case SynonymActionTypes.GET_SYNONYMS_FAILED:
         return { ...state, synonymsLoading: false, error: payload };
+
+      case SynonymActionTypes.GET_SYNONYM_CLEAR:
+        return { ...state, synonyms: [] };
   
       case SynonymActionTypes.POST_SYNONYM_STARTED:
         return { ...state, postSynonymLoading: true };

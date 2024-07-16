@@ -1,1 +1,31 @@
+body, html {
+    overflow-x: hidden;
+}
 
+.d-flex {
+    max-width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 0 15px;
+    }
+
+    .input-group-append {
+        flex-direction: column;
+    }
+
+    .input-group-append .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .input-group-append .btn:last-child {
+        margin-bottom: 0;
+    }
+}

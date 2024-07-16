@@ -7,11 +7,13 @@ import * as synonymActions from '../../shared/state/actions/synonym.actions';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LoadingComponent } from '../../components/loading/loading.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-synonym-post',
   standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule,],
+  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, LoadingComponent, CommonModule],
   templateUrl: './synonym-post.component.html',
   styleUrl: './synonym-post.component.scss'
 })

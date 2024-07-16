@@ -10,11 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 @Component({
   selector: 'app-synonym-search',
   standalone: true,
-  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule],
+  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule, CommonModule, LoadingComponent],
   templateUrl: './synonym-search.component.html',
   styleUrl: './synonym-search.component.scss'
 })
@@ -44,6 +45,9 @@ export class SynonymSearchComponent {
       if(!synonyms) return;
       this.dataSource = synonyms;
     });
+  }
+  ngOnInit(): void {
+    this.store.dispatch(new synonymActions.GetSynonymClear(null));
   }
   addNew(): void {
     this.router.navigate(['/post']);
