@@ -1,0 +1,6 @@
+.main-container {
+  background-image: url("../../../assets/backschool.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Cover the container */
+  background-position: center center;
+}

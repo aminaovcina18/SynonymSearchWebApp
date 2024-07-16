@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <form [formGroup]="synonymSearchForm" class="form-container w-100 p-3" style="max-width: 500px;">
+        <div class="text-center mb-4">
+            <h2>Find <strong>Synonym</strong></h2>
+            <p>Search for synonyms now</p>
+        </div>
+        <div class="input-group mt-4 d-flex flex-column">
+            <div class="form-field-wrapper w-100 mb-2">
+                <mat-form-field appearance="outline" class="w-100">
+                    <input type="search" matInput formControlName="search" placeholder="Enter a word">
+                </mat-form-field>
+            </div>
+            <div class="input-group-append d-flex flex-column flex-md-row w-100">
+                <button type="submit" class="btn btn-dark mb-2 mb-md-0 w-100 w-md-auto" (click)="manage(synonymSearchForm.value.search)">Search</button>
+                <button type="button" mat-button class="btn btn-secondary w-100 w-md-auto ml-md-2" (click)="addNew()">Add new</button>
+            </div>
+        </div>
+        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length == 0">
+            <p>No data to show!</p>
+        </div>
+        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length > 0">
+            <p>Synonyms found are:</p>
+            <p *ngFor="let w of dataSource">
+                {{w}}
+            </p>
+        </div>
+    </form>
+</div>

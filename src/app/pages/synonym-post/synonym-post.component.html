@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <form [formGroup]="synonymAddForm" class="w-100 p-3" style="max-width: 600px;">
+        <div class="text-center mb-4">
+            <h2>Add <strong>Synonym</strong></h2>
+            <p>Add new synonyms now</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <input matInput required formControlName="key" placeholder="Enter a word" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field appearance="outline" class="w-100">
+                    <input matInput required formControlName="value" placeholder="Enter its synonym" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-dark w-100 w-md-auto" [disabled]="synonymAddForm.invalid" (click)="manage(synonymAddForm.value)">Add it!</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <button type="button" mat-button class="btn btn-secondary w-100 w-md-auto" (click)="search()">Back to search</button>
+            </div>
+        </div>
+    </form>
+</div>
