@@ -1,6 +1,5 @@
 <div class="d-flex justify-content-center align-items-center vh-100" style="overflow-x: hidden;">
-    <app-loading *ngIf="LOADING"></app-loading>
-    <form *ngIf="!LOADING" [formGroup]="synonymSearchForm" class="form-container w-100 p-3" style="max-width: 500px;">
+    <form [formGroup]="synonymSearchForm" class="form-container w-100 p-3" style="max-width: 500px;">
         <div class="text-center mb-4">
             <h2>Find <strong>Synonym</strong></h2>
             <p>Search for synonyms now</p>
@@ -16,10 +15,11 @@
                 <button type="button" mat-button class="btn btn-secondary w-100 w-md-auto ml-md-2" (click)="addNew()">Add new</button>
             </div>
         </div>
-        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length == 0">
+        <app-loading *ngIf="LOADING"></app-loading>
+        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length == 0 && !LOADING">
             <p>No data to show!</p>
         </div>
-        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length > 0">
+        <div class="row text-center mt-4 w-100" *ngIf="dataSource.length > 0 && !LOADING">
             <p>Synonyms found are:</p>
             <p *ngFor="let w of dataSource">
                 {{w}}
